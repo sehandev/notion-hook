@@ -1,5 +1,6 @@
-import Head from "next/head"
-import { useRouter } from "next/router"
+import Head from 'next/head'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
 
 function HookPage() {
   const router = useRouter()
@@ -7,11 +8,16 @@ function HookPage() {
 
   if (url) {
     const meta_content = `0; URL=${url}`
-    return (
-      <Head>
-        {<meta http-equiv="refresh" content={meta_content} />}
-      </Head>
-    )
+
+    useEffect(() => {
+      const timeout = setTimeout(() => {
+        window.close()
+      }, 1000)
+
+      return () => clearTimeout(timeout)
+    }, [])
+
+    return <Head>{<meta http-equiv="refresh" content={meta_content} />}</Head>
   }
 
   return <></>
