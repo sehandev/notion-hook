@@ -6,15 +6,18 @@ function ObsidianPage() {
   const router = useRouter()
   const { url, file } = router.query
 
-  if (file) {
-    const meta_content = `0; URL=${url}&file=${file}`
-    useEffect(() => {
+  useEffect(() => {
+    if (file) {
       const timeout = setTimeout(() => {
         window.close()
       }, 1000)
 
       return () => clearTimeout(timeout)
-    }, [])
+    }
+  }, [])
+
+  if (file) {
+    const meta_content = `0; URL=${url}&file=${file}`
     return <Head>{<meta http-equiv="refresh" content={meta_content} />}</Head>
   }
 
