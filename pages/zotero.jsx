@@ -14,7 +14,7 @@ function ZoteroPage() {
 
       return () => clearTimeout(timeout)
     }
-  }, [])
+  }, [url])
 
   if (url) {
     const zotero_id = url.split('/items/')[1]

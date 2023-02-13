@@ -10,11 +10,11 @@ function ObsidianPage() {
     if (file) {
       const timeout = setTimeout(() => {
         window.close()
-      }, 1000)
+      }, 3000)
 
       return () => clearTimeout(timeout)
     }
-  }, [])
+  }, [file])
 
   if (file) {
     const meta_content = `0; URL=${url}&file=${file}`
@@ -24,7 +24,7 @@ function ObsidianPage() {
   return (
     <>
       <h1>Obsidian Hook</h1>
-      <div>Close after 1s..</div>
+      <div>Close after 3s..</div>
     </>
   )
 }

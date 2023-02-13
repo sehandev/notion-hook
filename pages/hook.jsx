@@ -10,11 +10,11 @@ function HookPage() {
     if (url) {
       const timeout = setTimeout(() => {
         window.close()
-      }, 1000)
+      }, 3000)
 
       return () => clearTimeout(timeout)
     }
-  }, [])
+  }, [url])
 
   if (url) {
     const meta_content = `0; URL=${url}`
