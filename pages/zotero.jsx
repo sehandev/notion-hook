@@ -1,12 +1,12 @@
-import Head from "next/head"
-import { useRouter } from "next/router"
+import Head from 'next/head'
+import { useRouter } from 'next/router'
 
-function Page() {
+function ZoteroPage() {
   const router = useRouter()
-  const { zotero_url } = router.query
+  const { url } = router.query
 
-  if (zotero_url) {
-    const zotero_id = zotero_url.split("/items/")[1]
+  if (url) {
+    const zotero_id = url.split('/items/')[1]
 
     const meta_content = `0; URL=zotero://select/library/items/${zotero_id}`
     return (
@@ -19,4 +19,4 @@ function Page() {
   return <></>
 }
 
-export default Page
+export default ZoteroPage
