@@ -18,15 +18,16 @@ function ObsidianPage() {
 
   if (file) {
     const meta_content = `0; URL=${url}&file=${file}`
-    return <Head>{<meta http-equiv="refresh" content={meta_content} />}</Head>
+    return (
+      <>
+        <Head>{<meta http-equiv="refresh" content={meta_content} />}</Head>
+        <h1>Obsidian Hook</h1>
+        <div>Close after 3s..</div>
+      </>
+    )
   }
 
-  return (
-    <>
-      <h1>Obsidian Hook</h1>
-      <div>Close after 3s..</div>
-    </>
-  )
+  return <h1>Obsidian Hook</h1>
 }
 
 export default ObsidianPage

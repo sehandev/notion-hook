@@ -18,10 +18,16 @@ function HookPage() {
 
   if (url) {
     const meta_content = `0; URL=${url}`
-    return <Head>{<meta http-equiv="refresh" content={meta_content} />}</Head>
+    return (
+      <>
+        <Head>{<meta http-equiv="refresh" content={meta_content} />}</Head>
+        <h1>Hook</h1>
+        <div>Close after 3s..</div>
+      </>
+    )
   }
 
-  return <></>
+  return <h1>Hook</h1>
 }
 
 export default HookPage
